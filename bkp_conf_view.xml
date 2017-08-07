@@ -25,7 +25,7 @@
 <div style="width:50%;border-radius:10px;margin: 10px 0px;padding:15px 10px 15px 10px;
 background-repeat: no-repeat;background-position: 10px center;color: #9F6000;background-color: #FEEFB3;" attrs="{'invisible': [('sftpwrite','=',False)]}"><b>Warning:</b> Use SFTP with caution! This writes files to external servers under the path you specify.</div>
 					<group>
-						<field name="sftpwrite" invisible="1"/>
+						<field name="sftpwrite" invisible="0"/>
 						<field name="sftpip" 
 						attrs="{'invisible':[('sftpwrite', '==', False)],'required':[('sftpwrite', '==', True)]}"/>
 						<field name="sftpusername" 
@@ -81,7 +81,7 @@ background-repeat: no-repeat;background-position: 10px center;color: #9F6000;bac
 				</tree>
 			</field>
 	</record>
-	
+
 	<record model="ir.ui.view" id="view_backup_conf_search">
 			<field name="name">Configure Backup</field>
 			<field name="model">db.backup</field>
@@ -102,7 +102,7 @@ background-repeat: no-repeat;background-position: 10px center;color: #9F6000;bac
 			<field name="name">Configure Backup</field>
 			<field name="res_model">db.backup</field>
 			<field name="view_type">form</field>
-			<field name='view_mode'>tree,form</field>
+			<field name='view_mode'>form,tree</field>
 			<field name='view_id' ref='view_backup_conf_tree'/>
 	</record>
 	<menuitem parent="base.menu_config" action="action_backup_conf_form" id="backup_conf_menu"/>
